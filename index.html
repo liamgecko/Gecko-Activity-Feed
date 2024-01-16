@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html lang="en" data-gecko-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gecko Activity Feed</title>
+
+    <link href="css/App.css" rel="stylesheet">
+    <link href="css/GeckoRSVP.css" rel="stylesheet">
+    <link href="css/Custom.css" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/2a69ff47c3.js" crossorigin="anonymous"></script>
+    
+</head>
+
+<body>
+
+    <div class="app-wrapper mx-auto position-relative">
+          
+        <div class="app-header bg-white pt-6 border-bottom">
+
+            <div class="pb-4 px-4 d-flex justify-content-between">
+
+                <h1 class="event-heading mb-1">New event portal event title - September 2023</h1>
+
+                <div class="dropdown">
+                    <button class="btn btn-naked-primary btn-sm btn-icon fs-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="far fa-ellipsis-v"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#edit-guests">Edit guests</a>
+                        <a class="dropdown-item" href="#">Add to calendar</a>
+                        <a class="dropdown-item" href="#">Print ticket</a>
+                        <a class="dropdown-item delete" href="#" data-bs-toggle="modal" data-bs-target="#remove-booking">Remove booking</a>
+                    </div>
+                </div>
+            
+            </div>
+
+            <ul class="nav nav-tabs px-4" id="nav-tabs" role="tablist">
+                <li class="nav-item me-4">
+                    <a class="nav-link px-0 active" id="event-info" data-bs-toggle="tab" data-bs-target="#event-info-tab-pane" type="button" role="tab" aria-controls="event-info-tab-pane" aria-selected="true" aria-current="page" href="#">Event info</a>
+                </li>
+                <li class="nav-item me-4">
+                    <a class="nav-link px-0" href="#" id="my-itinerary" data-bs-toggle="tab" data-bs-target="#my-itinerary-tab-pane" type="button" role="tab" aria-controls="my-itinerary-tab-pane" aria-selected="false">My itinerary</a>
+                </li>
+                <li class="nav-item me-0">
+                    <a class="nav-link px-0" href="#" id="ticket" data-bs-toggle="offcanvas" data-bs-target="#ticket-view" aria-controls="ticket-view" type="button" role="tab" aria-selected="false">Ticket</a>
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="app-sidebar pt-4">
+
+            <div class="sidebar-logo border-bottom px-4 pb-2">
+                <img src="img/customer-logo.png" class="img-fluid" alt="" />
+            </div>
+
+            <ul class="sidebar-menu p-4" role="tablist">
+                <li class="nav-item mb-2">
+                    <a class="nav-link p-2 rounded active" id="event-info" data-bs-toggle="tab" data-bs-target="#event-info-tab-pane" type="button" role="tab" aria-controls="event-info-tab-pane" aria-selected="true" aria-current="page" href="#"><i class="fal fa-calendars me-2"></i>Event information</a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a class="nav-link rounded p-2" href="#" id="my-itinerary" data-bs-toggle="tab" data-bs-target="#my-itinerary-tab-pane" type="button" role="tab" aria-controls="my-itinerary-tab-pane" aria-selected="false"><i class="fal fa-clipboard-list-check me-2"></i>My itinerary</a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a class="nav-link rounded p-2" href="#" id="ticket" data-bs-toggle="modal" data-bs-target="#ticket-modal" type="button" role="tab" aria-selected="false"><i class="fal fa-qrcode me-2"></i>Ticket</a>
+                </li>
+                <li class="nav-item mb-2">
+                    <div class="dropdown">
+                        <a class="nav-link rounded p-2" href="#" id="manage-booking" data-bs-toggle="dropdown" type="button" role="tab" aria-selected="false"><i class="fal fa-cog me-2"></i>Manage booking</a>
+                        <div class="dropdown-menu" aria-labelledby="manage-booking">
+                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#edit-guests">Edit guests</a>
+                            <a class="dropdown-item" href="#">Add to calendar</a>
+                            <a class="dropdown-item" href="#">Print ticket</a>
+                            <a class="dropdown-item delete" href="#" data-bs-toggle="modal" data-bs-target="#remove-booking">Remove booking</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="app-body with-footer">
+
+            <div class="app-body-content">
+
+                <div class="gecko-banner-header gecko-landing-page-color-background row mt-4 mx-4" style="background-image: url(&quot;https://gecko-uploads.s3.amazonaws.com/gecko_1391/hcext_3266.jpg?w=1051&quot;);">
+                    <div class="gecko-banner-header-text">
+                        <div class="col-xl-6 col-lg-10 col-md-10 col-sm-12">
+                            <span class="d-block fs-1 fw-semibold text-white">Hey Liam 👋</span>
+                            <h1 class="title">Welcome to your virtual campus</h1>
+                            <div class="description">
+                                <div>
+                                    <p>Welcome to your student portal where you can access events, fill out forms, and stay up-to-date on your journey as a student.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portal--app-body-wrapper px-6 pt-10 pb-10">
+
+                    <div class="row">
+
+                        <div class="col-9 border-end pe-8">
+
+                            <h2>Activity</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mollis non odio vel cursus.</p>
+
+                            <div class="activity-container mt-6">
+
+                                <ul class="nav nav-tabs">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="#">All activity</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">My activity</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Posts</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link">Notifications</a>
+                                    </li>
+                                </ul>
+
+                                <div class="activity-feed mt-6">
+
+                                    <div class="activity-feed-item d-flex align-items-start pb-8">
+
+                                        <div class="avatar avatar-lg me-3">
+                                            <div class="avatar-body">
+                                                <img src="img/avatar.jpg">
+                                            </div>
+                                        </div>
+
+                                        <div>
+
+                                            <div class="activity-header mb-4">
+                                                <span class="d-block text-grey-600 fw-medium fs-3">Invitation</span>
+                                                <span class="d-block fw-semibold">You have been invited to attend - University of Gecko Open Day 2024</span>
+                                            </div>
+
+                                            <div class="activity-event">
+                                                <img src="img/activity.jpg" class="img-fluid" style="width: 100%;"/>
+                                                <div class="activity-event-details bg-grey-200 p-4 rounded-bottom d-flex justify-content-between">
+                                                    <div>
+                                                        <span class="activity-event-sub-title d-block text-blue-500 fw-medium text-uppercase">On campus</span>
+                                                        <span class="activity-event-title fw-semibold mb-2 d-block">University of Gecko Open Day 2024</span>
+                                                        <div class="activity-event-meta text-secondary">
+                                                            <span class="me-2"><i class="far fa-calendar-alt me-1"></i>Sunday 9th July at 10am</span>
+                                                            <span><i class="far fa-map-marker-alt me-1"></i>Dundas Street, Edinburgh</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <button type="button" class="btn btn-primary btn-sm btn-icon-left"><i class="far fa-calendar-check"></i>Accept invitation</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="activity-feed-item d-flex align-items-start pb-8">
+
+                                        <div class="avatar avatar-lg me-3">
+                                            <div class="avatar-body">
+                                                <img src="img/avatar.jpg">
+                                            </div>
+                                        </div>
+
+                                        <div>
+
+                                            <div class="activity-header mb-4">
+                                                <span class="d-block text-grey-600 fw-medium fs-3">From X</span>
+                                                <span class="d-block fw-semibold">University of Gecko <span class="text-grey-600">@UoGecko</span></span>
+                                            </div>
+
+                                            <div class="activity-event">
+                                                <div>
+                                                    <p>We’ve been ranked 24th in the world for our efforts towards sustainability in the QS rankings, as well as 7th in the UK and 12th in Europe.</p>
+                                                    <p> Over 1,400 institutions were included in the rankings which looked at a range of Environmental, Social and Governance issues.</p>
+                                                    <p><a href="" class="fw-medium text-decoration-none">#UniversityofGecko</a></p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="activity-feed-item d-flex align-items-start pb-8">
+
+                                        <div class="avatar avatar-lg me-3">
+                                            <div class="avatar-body">
+                                                <img src="img/avatar.jpg">
+                                            </div>
+                                        </div>
+
+                                        <div>
+
+                                            <div class="activity-header mb-4">
+                                                <span class="d-block text-grey-600 fw-medium fs-3">Reminder</span>
+                                                <span class="d-block fw-semibold">You have a task outstanding</span>
+                                            </div>
+
+                                            <div class="activity-event">
+                                                <div>
+                                                    <p>We still require proof of address to confirm your place for the 2024 academic year.  Please complete the form to prevent any delays.</p>
+                                                    <p><button type="button" class="btn btn-secondary btn-sm btn-icon-left"><i class="far fa-edit"></i>Complete form</button></p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-3 ps-8">
+
+                            <div class="profile-container border rounded p-6 d-flex flex-column align-items-center mb-6">
+
+                                <div class="avatar avatar-xl">
+                                    <div class="avatar-body" style="height: 88px; width: 88px;">LY</div>
+                                </div>
+
+                                <h2 class="mt-6">
+                                    Liam Young
+                                </h2>
+
+                                <div class="text-secondary">
+                                    liam@geckoengage.com
+                                </div>
+
+                                <div class="mt-6">
+                                    <a href="" class="fw-medium" style="text-decoration: none;"><i class="far fa-cog me-1"></i>Manage account</a>
+                                </div>
+
+                            </div>
+
+                            <div class="task-container border rounded">
+
+                                <div class="task-header border-bottom p-4">
+                                    <h3 class="mb-0">Your tasks</h3>
+                                </div>
+
+                                <div class="task-body p-4">
+
+                                    <ul class="list-unstyled">
+                                        <li class="mb-3">
+                                            <h4>Attend an open day</h4>
+                                            <span class="fs-3 text-secondary"><i class="fas fa-check-circle text-grey-500"></i> Incomplete</span>
+                                        </li>
+                                        <li class="mb-3">
+                                            <h4>Order a prospectus</h4>
+                                            <span class="fs-3 text-green-500"><i class="fas fa-check-circle text-green-500"></i> Complete</span>
+                                        </li>
+                                        <li class="mb-3">
+                                            <h4>Submit application</h4>
+                                            <span class="fs-3 text-secondary"><i class="fas fa-check-circle text-grey-500"></i> Incomplete</span>
+                                        </li>
+                                        <li>
+                                            <h4>Apply for financial aid</h4>
+                                            <span class="fs-3 text-secondary"><i class="fas fa-check-circle text-grey-500"></i> Incomplete</span>
+                                        </li>
+                                    </ul>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+                
+
+        </div>
+        
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
