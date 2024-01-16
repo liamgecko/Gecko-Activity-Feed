@@ -1,3 +1,7 @@
+* {
+  min-width: 0;
+}
+
 .gecko-events-embed-event-tabs-container {
   border: 1px solid #E2E8F0 !important;
   border-radius: 4px;
@@ -336,4 +340,17 @@
 
 .activity-feed-item:last-child:before {
   display: none;
+}
+
+.portal--app-body-wrapper {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1684px) {
+  .portal--app-body-wrapper {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
 }
